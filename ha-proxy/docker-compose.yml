@@ -1,0 +1,12 @@
+version: '3'
+services:
+  loadbalancer:
+    image: haproxy
+    container_name: lb
+    ports:
+      - 80:80
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    deploy:
+      mode: replicated
+      replicas: 1

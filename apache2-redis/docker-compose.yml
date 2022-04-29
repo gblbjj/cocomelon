@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: gblbjj/lab-apache-redis:1.0.0
+    container_name: web-redis
+    ports:
+      - "8084:80"
+    deploy:
+      mode: replicated
+      replicas: 1
